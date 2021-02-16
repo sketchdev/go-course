@@ -1,4 +1,4 @@
-module bitbucket.visa.com/hello
+module hello
 
 go 1.14
 
