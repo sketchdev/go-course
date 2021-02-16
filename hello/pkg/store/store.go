@@ -7,8 +7,8 @@ import (
 )
 
 type Student struct {
-	FirstName string
-	LastName  string
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
 }
 
 type Store interface {
