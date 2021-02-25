@@ -6,10 +6,18 @@ import (
 	"time"
 )
 
-func Random(size int) (randomStudents []store.Student) {
+var studentStore = store.NewStore()
 
-	studentStore := store.NewStore()
+func Random(size int) (randomStudents []store.Student) {
 	students := studentStore.GetStudents()
+
+	if len(students) == 0 {
+		return
+	}
+
+	if size > len(students) {
+		size = len(students)
+	}
 
 	rand.Seed(time.Now().UnixNano())
 
